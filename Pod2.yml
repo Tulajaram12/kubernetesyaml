@@ -1,0 +1,13 @@
+To Create Image Pull Secrets
+#kubectl create secret docker-registry dockerregistry-secret --docker-username=XXXXXXX --docker-password=XXXXXXX --docker-email=XXXXXXXXX --docker-server=XXXXXXX
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod2
+spec:
+  imagePullSecrets:
+     - name: dockerregistry-secret
+  containers:
+     - name: apache
+       image: httpd
+
