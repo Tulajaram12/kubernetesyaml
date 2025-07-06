@@ -1,0 +1,9 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: role
+rules:
+  - apiGroups: [""]
+    resources: ["pods"]
+    resourceNames: ["app_project_pod", "app2_project_pod"]
+    verbs: ["get", "watch", "delete"]
